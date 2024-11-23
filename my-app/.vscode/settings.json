@@ -1,0 +1,12 @@
+{
+	"java.jdt.ls.java.home": "/opt/jdk-24",
+	"java.configuration.runtimes": [
+        {
+            "name": "JavaSE-22",
+            "path": "/mnt/c/Program Files/java/jdk-22",
+            "default": true
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "makefile.configureOnOpen": false
+}

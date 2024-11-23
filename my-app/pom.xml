@@ -40,6 +40,13 @@
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- <dependency>
+      <groupId>com.github.kwhat</groupId>
+      <artifactId>jnativehook</artifactId>
+      <version>4.0.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/jnativehook-2.2.2.jar</systemPath>
+    </dependency> -->
   </dependencies>
 
   <build>
