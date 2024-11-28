@@ -11,33 +11,33 @@ public class View extends Object {
 			throw new Exception("Object " + _name +  "-> Height outside of 3-200 range: " + _height);
 	}
 
-	private int startStr(String str) {
-		int start = _width / 2 - str.length() / 2 - 1 + _x;
-		for (Object object : objs) {
-			if (start >= object._x && start <= object._width + object._x && _y + 2 >= object._y && _y + 2 <= object._y + object._height) {
-				System.out.println("str start collided with object " + object._name);
-				start = object._width + object._x + 2;
-			}
-		}
+	// private int startStr(String str) {
+	// 	int start = _width / 2 - str.length() / 2 - 1 + _x;
+	// 	for (Object object : objs) {
+	// 		if (start >= object._x && start <= object._width + object._x && _y + 2 >= object._y && _y + 2 <= object._y + object._height) {
+	// 			System.out.println("str start collided with object " + object._name);
+	// 			start = object._width + object._x + 2;
+	// 		}
+	// 	}
 
-		if (start > _width)
-			return -1;
-		return start;
-	}
+	// 	if (start > _width)
+	// 		return -1;
+	// 	return start;
+	// }
 
-	private int endStr(String str) {
-		int end = _x + _width / 2 - str.length() / 2 - 2 + str.length();
-		for (Object object : objs) {
-			if (end >= object._x && end <= object._width + object._x && _y + 2 >= object._y && _y + 2 <= object._y + object._height) {
-				System.out.println("str end collided with object " + object._name);
-				end = object._x - 2;
-			}
-		}
+	// private int endStr(String str) {
+	// 	int end = _x + _width / 2 - str.length() / 2 - 2 + str.length();
+	// 	for (Object object : objs) {
+	// 		if (end >= object._x && end <= object._width + object._x && _y + 2 >= object._y && _y + 2 <= object._y + object._height) {
+	// 			System.out.println("str end collided with object " + object._name);
+	// 			end = object._x - 2;
+	// 		}
+	// 	}
 
-		if (end < 0)
-			return -1;
-		return end;
-	}
+	// 	if (end < 0)
+	// 		return -1;
+	// 	return end;
+	// }
 
 	@Override
 	public void	show() {

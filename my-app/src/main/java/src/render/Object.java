@@ -37,18 +37,16 @@ public class Object {
 			obj._width = _width;
 		if (obj._height > _height)
 			obj._height = _height;
-		// if (obj._x < _x || obj._x + obj._width > _x + _width)
-		// 	obj._x = _x;
-		// if (obj._y + obj._height > _y + _height)
-		// 	obj._y = _y + _height - obj._height;
-		// if (obj._y < _y || )
-		// 	obj._y = _y;
-		
+		if (obj._x < _x || obj._x + obj._width > _x + _width)
+			obj._x = _x;
+		if (obj._y < _y || obj._y + obj._height > _y + _height)
+			obj._y = _y;
 		objs.add(obj);
 	}
 
 	public void removeObject(Object obj) {
-		objs.remove(obj);
+		if (objs.contains(obj))
+			objs.remove(obj);
 	}
 
 	public void	show() {};
