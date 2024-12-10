@@ -81,6 +81,7 @@ public class Window {
 		objs = new ArrayList<>();
 		View v1 = new View(this, "Character overview", "yellow", _width / 4, _height, 0, 0);
 		View v2 = new View(this, "Time & date", "none", _width / 4, _height,  _width - _width / 4, 0);
+		View v3 = new View(this, "Actions", "none", _width / 2 + 2, _height / 3, _width / 4 - 1, _height - _height / 4);
 		TextBox t1 = new TextBox(this, "Name: Warrior#W", "none", 100, 1, v1.getX() + 2, v1.getY() + 4);
 		TextBox t2 = new TextBox(this, "Skills : STR+1,...", "none", 100, 1, t1.getX(), t1.getY() + 4);
 		v1.addObject(t1);
@@ -88,5 +89,9 @@ public class Window {
 		// v1.addObject(v2);
 		v1.show();
 		v2.show();
+		v3.show();
 	}
+
+	public int getWidth() { return _width; }
+	public int getHeight() { return _height; }
 }

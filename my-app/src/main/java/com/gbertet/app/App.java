@@ -1,4 +1,6 @@
-package com.mycompany.app;
+package com.gbertet.app;
+
+import java.io.File;
 
 import src.control.InputListener;
 import src.render.Window;
@@ -20,5 +22,6 @@ public class App {
 			e.printStackTrace();
 			System.out.println("huh");
 		}
-	}
+		// System.out.println("File path: " + new File("Your file name").getAbsolutePath());
+}
 }

@@ -5,10 +5,10 @@ public class View extends Object {
 	public View(Window win, String name, String color, int width, int height, int x, int y) throws Exception {
 		super(win, name, color, width, height, x, y);
 
-		if (this._width < 3 || this._width > 200)
-			throw new Exception("Object " + _name +  "-> Width outside of 3-200 range: " + _width);
-		else if (this._height < 3 || this._height > 200)
-			throw new Exception("Object " + _name +  "-> Height outside of 3-200 range: " + _height);
+		if (this._width < 3 || this._width > 256)
+			throw new Exception("Object " + _name +  "-> Width outside of 3-256 range: " + _width);
+		else if (this._height < 3 || this._height > 256)
+			throw new Exception("Object " + _name +  "-> Height outside of 3-256 range: " + _height);
 	}
 
 	// private int startStr(String str) {
@@ -39,20 +39,23 @@ public class View extends Object {
 	// 	return end;
 	// }
 
+	public void showBorders() {
+		for (int x = 0; x < _width; x++) {
+			_win.setChar(x + _x, _y, ' ', "white");
+			_win.setChar(x + _x, _y + _height - 1, ' ', "white");
+		}
+		for (int y = 0; y < _height; y++) {
+			_win.setChar(_x, y + _y, ' ', "white");
+			_win.setChar(_x + _width - 1, y + _y, ' ', "white");
+		}
+	}
+
 	@Override
 	public void	show() {
 		if (!_visible)
 			return;
-		
-		for (int x = 0; x < _width; x++) {
-			_win.setChar(x + _x, _y, ' ', "white");
-			_win.setChar(x + _x, _height - 1, ' ', "white");
-		}
-		for (int y = 0; y < _height; y++) {
-			_win.setChar(_x, y + _y, ' ', "white");
-			_win.setChar(_width - 1, y + _y, ' ', "white");
-		}
 
+		showBorders();
 		String tmp;
 		if (_name.length() > _width)
 			tmp = _name.substring(0, _width - 3) + "...";

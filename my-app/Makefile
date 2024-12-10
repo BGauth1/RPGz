@@ -6,7 +6,7 @@ FLAGS = -cp
 TARGET_DIR = target
 TARGET = my-app-1.0-SNAPSHOT.jar
 
-MAIN = com.mycompany.app.App
+MAIN = com.gbertet.app.App
 
 all : $(NAME)
 

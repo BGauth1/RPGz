@@ -55,10 +55,22 @@ public class Object {
 		_win = win;
 		_name = name;
 		_color = color;
-		_width = width;
-		_height = height;
-		_x = x;
-		_y = y;
+		if (x > win.getWidth())
+			_x = win.getWidth();
+		else
+			_x = x;
+		if (y > win.getHeight())
+			_y  = win.getHeight();
+		else
+			_y = y;
+		if (_x + width > win.getWidth())
+			_width = win.getWidth() - _x;
+		else
+			_width = width;
+		if (_y + height > win.getHeight())
+			_height = win.getHeight() - _y;
+		else
+			_height = height;
 		_visible = true;
 		objs = new ArrayList<>();
 	}
@@ -67,10 +79,22 @@ public class Object {
 		_win = win;
 		_name = name;
 		_color = "none";
-		_width = width;
-		_height = height;
-		_x = x;
-		_y = y;
+		if (x > win.getWidth())
+			_x = win.getWidth();
+		else
+			_x = x;
+		if (y > win.getHeight())
+			_y  = win.getHeight();
+		else
+			_y = y;
+		if (_x + width > win.getWidth())
+			_width = win.getWidth() - _x;
+		else
+			_width = width;
+		if (_y + height > win.getHeight())
+			_height = win.getHeight() - _y;
+		else
+			_height = height;
 		_visible = true;
 		objs = new ArrayList<>();
 	}
